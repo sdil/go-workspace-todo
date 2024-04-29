@@ -2,7 +2,7 @@
 
 ```sh
 # Starting API Server
-$ go run api/
+$ go run api/cmd/server/server.go
 
 # Curling the service
 curl -i localhost:8080/todos

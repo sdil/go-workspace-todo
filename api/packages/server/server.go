@@ -17,7 +17,6 @@ type Server struct {
 }
 
 func NewServer(opts NewServerOptions) *Server {
-	log.Println("Starting server")
 	server := gin.Default()
 
 	log.Println("Setting up routes")
