@@ -1,7 +1,7 @@
 package server
 
-import "api/packages/server/routes"
+import "api/modules/todo"
 
 func (s *Server) setupRoutes() {
-	routes.TodoRoutes(s.server, s.database)
+	todo.SetupRoutes(s.server, s.database)
 }

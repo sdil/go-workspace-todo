@@ -1,23 +1,22 @@
-package routes
+package todo
 
 import (
-	"api/modules/todo"
 	"database/sql"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
-func TodoRoutes(s *gin.Engine, db *sql.DB) {
+func SetupRoutes(s *gin.Engine, db *sql.DB) {
 
 	s.GET("/todos", func(c *gin.Context) {
-		todos := todo.GetTodos(db)
+		todos := GetTodos(db)
 		c.JSON(http.StatusOK, gin.H{
 			"todos": todos,
 		})
 	})
 
 	s.GET("/todos-create", func(c *gin.Context) {
-		todo := todo.CreateTodo(db, todo.Todo{
+		todo := CreateTodo(db, Todo{
 			Name:      "test",
 			Completed: false,
 		})
