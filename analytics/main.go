@@ -5,7 +5,6 @@ import (
 	"log"
 
 	"database/sql"
-	_ "embed"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -14,5 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatalln("Unable to start sqlite")
 	}
-	log.Println(todo.GetTodos(db))
+	todos := todo.GetTodos(db)
+	completed := countCompleted(todos)
+	log.Println(completed)
 }
