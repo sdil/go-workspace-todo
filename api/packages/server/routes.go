@@ -1,7 +1,7 @@
 package server
 
-import "api/modules/todo"
+import "api/handlers"
 
 func (s *Server) setupRoutes() {
-	todo.SetupRoutes(s.server, s.database)
+	handlers.TodoRoutes(s.server, s.database)
 }
