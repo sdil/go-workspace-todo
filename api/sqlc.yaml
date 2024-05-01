@@ -7,3 +7,10 @@ sql:
       go:
         package: "todo"
         out: "modules/todo"
+  - engine: "sqlite"
+    queries: "modules/user/query.sql"
+    schema: "modules/user/schema.sql"
+    gen:
+      go:
+        package: "user"
+        out: "modules/user"

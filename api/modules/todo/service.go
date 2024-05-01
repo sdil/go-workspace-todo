@@ -13,6 +13,20 @@ func GetTodos(db *sql.DB) []Todo {
 	return todos
 }
 
+func GetTodosByUser(db *sql.DB, user int64) []Todo {
+	ctx := context.Background()
+	queries := New(db)
+	todos, _ := queries.ListTodoByUser(ctx, user)
+	return todos
+}
+
+func GetTodo(db *sql.DB, id int64) Todo {
+	ctx := context.Background()
+	queries := New(db)
+	todo, _ := queries.GetTodo(ctx, id)
+	return todo
+}
+
 func CreateTodo(db *sql.DB, t Todo) Todo {
 	ctx := context.Background()
 	queries := New(db)

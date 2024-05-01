@@ -2,6 +2,7 @@ package main
 
 import (
 	"api/modules/todo"
+	"api/modules/user"
 	"api/packages/server"
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
@@ -16,6 +17,7 @@ func main() {
 		log.Fatalln("Unable to start sqlite")
 	}
 	todo.CreateTables(db)
+	user.CreateTables(db)
 
 	s := server.NewServer(
 		server.NewServerOptions{
