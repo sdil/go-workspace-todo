@@ -3,7 +3,6 @@ package handlers
 import (
 	"api/modules/user"
 	"database/sql"
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
